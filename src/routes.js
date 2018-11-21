@@ -3,10 +3,11 @@ import People from 'components/People/people';
 import Person from 'components/People/person';
 import Vehicles from 'components/Vehicles/vehicles';
 import NotFound from 'components/NotFound/notFound';
+import Chart from 'components/Chart/chart';
 
 const routes = [
   {
-    path: '/',
+    path: '/readme',
     component: Home
   },
   {
@@ -25,6 +26,10 @@ const routes = [
   {
     path: '*',
     component: NotFound
+  },
+  {
+    path: '/',
+    component: Chart
   }
 ];
 

@@ -2,11 +2,16 @@
   name="person-appear-animation"
   enter-active-class="animated flipInX">
   <div v-if="person.name">
-    <div class="card card-block">
+    <div class="card card-block mt-3">
       <h1 class="card-title">{{ person.name }}</h1>
       <p class="card-text">Height: {{ person.height }}</p>
       <p class="card-text">Weight: {{ person.mass }}</p>
       <p class="card-text">Gender: {{ person.gender }}</p>
+      <p class="card-text">Vehicles:</p>
+      <ul v-if="vehicles.length">
+        <li v-for="vehicle in vehicles" :key="vehicles.name">{{ vehicle.name }}</li>
+      </ul>
+      <ul v-else><li>none</li></ul>
     </div>
     <hr>
     <router-link class="" to="/people">

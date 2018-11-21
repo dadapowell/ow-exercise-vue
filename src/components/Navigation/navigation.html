@@ -1,16 +1,38 @@
-<nav class="navbar fixed-top navbar-toggleable-sm navbar-inverse bg-inverse">
-    <router-link class="navbar-brand" to="/">
-      <img alt="Brand" src="~assets/images/logo.png" height="20">
-    </router-link>
-  <ul class="navbar-nav">
-    <router-link class="nav-item" tag="li" to="/" exact>
-      <a class="nav-link"><i class="fa fa-home"></i> Home</a>
-    </router-link>
-    <router-link class="nav-item" tag="li" to="/people" exact>
-      <a class="nav-link"><i class="fa fa-user"></i> People</a>
-    </router-link>
-    <router-link class="nav-item" tag="li" to="/vehicles" exact>
-      <a class="nav-link"><i class="fa fa-rocket"></i> Vehicles</a>
-    </router-link>
-  </ul>
-</nav>
+<b-navbar toggleable="md" fixed="top" type="dark" class="navbar-toggleable navbar-inverse">
+
+  <b-container fluid>
+    <b-row>
+
+      <b-col cols="1">
+        <b-navbar-brand to="/">
+          <img alt="Brand" src="~assets/images/logo.png" class="d-inline-block" height="20" width="20">
+        </b-navbar-brand>
+      </b-col>
+
+      <b-col>
+        <b-collapse is-nav id="nav-collapse">
+          <b-navbar-nav>
+            <b-nav-item to="/" exact>
+              <i class="fa fa-home"></i> Home
+            </b-nav-item>
+            <b-nav-item to="/people" exact>
+              <i class="fa fa-user"></i> People
+            </b-nav-item>
+            <b-nav-item to="/vehicles" exact>
+              <i class="fa fa-rocket"></i> Vehicles
+            </b-nav-item>
+            <b-nav-item to="/readme" exact>
+              <i class="fa fa-user"></i> README
+            </b-nav-item>
+          </b-navbar-nav>
+        </b-collapse>
+      </b-col>
+
+      <b-col cols="2">
+        <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+      </b-col>
+    </b-row>
+
+  </b-container>
+
+</b-navbar>

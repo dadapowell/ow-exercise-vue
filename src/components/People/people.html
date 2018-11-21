@@ -1,15 +1,15 @@
 <div v-show="people.length" class="mb-4">
-  <h1 class="mb-4"><i class="fa fa-user"></i> People</h1>
+  <h1 class="mb-4 mt-3"><i class="fa fa-user"></i> People</h1>
 
   <div class="form-group">
-    <input class="form-control" placeholder="Filter people..." v-model="peopleFilter">
+    <input class="form-control filter-people" placeholder="Filter people..." v-model="peopleFilter">
   </div>
 
-  <div class="summary">
+  <div class="summary jumbotron jumbotron-flex container-fluid">
     <h2>Summary</h2>
-    <p><strong>Count:</strong>{{people.length}}</p>
-    <p><strong>Avg Height:</strong>{{peopleSummary.avgHeight}}</p>
-    <p><strong>Avg Weight:</strong>{{peopleSummary.avgMass}}</p>
+    <p><strong>Count: </strong>{{people.length}}</p>
+    <p><strong>Avg Height: </strong>{{peopleSummary.avgHeight}}</p>
+    <p><strong>Avg Weight: </strong>{{peopleSummary.avgMass}}</p>
   </div>
 
   <transition-group

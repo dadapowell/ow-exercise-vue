@@ -8,7 +8,8 @@ export default Vue.extend({
 
   data() {
     return {
-      person: {}
+      person: {},
+      vehicles: []
     };
   },
 
@@ -23,11 +24,27 @@ export default Vue.extend({
       return starWarsResource.get(`people/${id}`)
         .then((response) => {
           this.person = response.data;
+          if (response.data.vehicles.length) {
+            this.fetchVehicles(response.data.vehicles);
+          }
         })
         .catch((errorResponse) => {
           // Handle error...
           console.log('API responded with:', errorResponse);
         });
+    },
+    fetchVehicles(vehicleArray) {
+      for(var i = 0; i < vehicleArray.length; i++){
+        const vArr = vehicleArray[i].split('/');
+        const vID = vArr[vArr.length - 2];
+        starWarsResource.get(`vehicles/${vID}`)
+          .then((response) => {
+            this.vehicles.push(response.data);
+          })
+          .catch((err) => {
+            console.log('Error returning vehicles: ', err);
+        });
+      }
     }
   }
 });

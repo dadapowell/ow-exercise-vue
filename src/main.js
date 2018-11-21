@@ -1,11 +1,13 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import BootstrapVue from 'bootstrap-vue';
 
 import { LoadingState } from 'src/config/loading-state';
 import Navigation from 'components/Navigation/navigation';
 import Loader from 'components/Loader/loader';
 
 Vue.use(VueRouter);
+Vue.use(BootstrapVue);
 
 import 'src/config/http';
 import routes from 'src/routes';
